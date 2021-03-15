@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "url-encoder for SVG",
+  "description": "A tool that helps you use SVG in CSS via data URI.",
+  "version": "0.1.0",
+  "browser_action": {
+    "default_icon": {
+      "16": "/assets/img/16x16.png",
+      "48": "/assets/img/48x48.png",
+      "128": "/assets/img/128x128.png"
+    },
+    "default_popup": "index.html"
+  },
+  "icons": {
+    "16": "/assets/img/16x16.png",
+    "48": "/assets/img/48x48.png",
+    "128": "/assets/img/128x128.png"
+  }
+}
