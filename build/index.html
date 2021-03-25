@@ -51,6 +51,8 @@
         <div class="containers">
           <div class="container container--left container container--init">
               <h4>Insert SVG:</h4>
+              or <input type="file" id="file-browser" style="display: none;">
+              <label for="file-browser">Browse SVG file</label>
 
               <button class="button-example">Example</button>
 
@@ -81,7 +83,7 @@
 
         <div class="containers">
           <div class="container container--left container container--result-css">
-            <h4>Ready for CSS:</h4>
+            <h4>Base64:</h4>
 
             <button
               id="copy-css-result-button" title="Copy CSS results to clipboard" class="copy-button">Copy</button>
@@ -123,7 +125,8 @@
             </div>
 
             <div class="demo-wrapper">
-              <div id="demo" class="demo"></div>
+              <!-- <div id="demo" class="demo"></div> -->
+              <img id="demo" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="demo"></img>
             </div>
           </div>
         </div>

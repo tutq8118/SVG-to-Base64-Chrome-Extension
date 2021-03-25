@@ -18,6 +18,7 @@ let externalQuotesValue = document.querySelector(`.options__input:checked`).valu
 let quotes = getQuotes();
 
 const buttonExample = document.querySelector(`.button-example`);
+const fileSelector = document.querySelector(`#file-browser`);
 
 // Textarea Actions
 // ----------------------------------------
@@ -35,6 +36,17 @@ resultTextarea.oninput = function () {
   getResults();
 };
 
+fileSelector.onchange = (e) => {
+  var fr = new FileReader();
+  fr.onload = () => {
+    setTimeout(() => {
+      initTextarea.value = fr.result;
+      getResults();
+    }, 100);
+  };
+  fr.readAsText(e.target.files[0]);
+};
+
 function getResults () {
   if (!initTextarea.value) {
     resultCssTextarea.value = ``;
@@ -45,9 +57,10 @@ function getResults () {
   const namespaced = addNameSpace(initTextarea.value);
   const escaped = encodeSVG(namespaced);
   resultTextarea.value = escaped;
-  const resultCss = `background-image: url(${quotes.level1}data:image/svg+xml,${escaped}${quotes.level1});`;
+  // const resultCss = `background-image: url(${quotes.level1}data:image/svg+xml,${escaped}${quotes.level1});`;
+  const resultCss = `data:image/svg+xml,${escaped}`;
   resultCssTextarea.value = resultCss;
-  resultDemo.setAttribute(`style`, resultCss);
+  resultDemo.setAttribute(`src`, resultCss);
 }
 
 // Tabs Actions
