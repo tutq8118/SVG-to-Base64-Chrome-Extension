@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
-  "name": "SVG-to-Base64",
-  "description": "Convert SVG to Base64 image.",
+  "name": "SVG to Base64",
+  "description": "Convert SVG to Base64.",
   "version": "0.0.1",
   "browser_action": {
     "default_icon": {

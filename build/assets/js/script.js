@@ -36,6 +36,7 @@ resultTextarea.oninput = function () {
   getResults();
 };
 
+/* File upload  */
 fileSelector.onchange = (e) => {
   var fr = new FileReader();
   fr.onload = () => {

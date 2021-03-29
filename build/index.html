@@ -1,12 +1,13 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <title>URL-encoder for SVG</title>
+    <title>SVG to Base64</title>
     <link rel="stylesheet" href="./assets/css/styles.css">
   </head>
   <body>
     <div class="wrapper">
       <header class="header">
-        <h1>URL-encoder for SVG</h1>
+        <h1>SVG to Base64</h1>
       </header>
 
       <main>
@@ -37,25 +38,13 @@
                 <span class="options__text">double</span>
               </label>
           </div>
-
-
-          <dl class="about">
-            <dt class="expander">About tool</dt>
-
-            <dd class="expanded hidden">
-              <p>We can use SVG in CSS via data URI, but without encoding it works only in Webkit based browsers. If encode SVG using <code>encodeURIComponent()</code> it will work everywhere.</p><p>SVG must have attribute <strong>xmlns</strong> like this: <code>xmlns='http: //www.w3.org/2000/svg'</code>. If it doesn't exist, it will be added automagically.</p><p>Encoded SVG can be used in <code>background</code>, in <code>border-image</code> or in <code>mask</code> (<a href='https://codepen.io/yoksel/full/WNrLpYW'>live demo</a>).</p>
-            </dd>
-          </dl>
         </div>
 
         <div class="containers">
           <div class="container container--left container container--init">
-              <h4>Insert SVG:</h4>
-              or <input type="file" id="file-browser" style="display: none;">
-              <label for="file-browser">Browse SVG file</label>
-
+              <input type="file" id="file-browser" style="display: none;">
+              <label class="file-browser-btn" for="file-browser"><h4>Insert SVG</h4>&nbsp;<span>or</span>&nbsp;<button>Browse an SVG file</button></label>
               <button class="button-example">Example</button>
-
               <textarea
                 name="init"
                 id="init"
@@ -65,29 +54,25 @@
 
           <div class="container container--right container container--result">
             <h4>Take encoded:</h4>
-
             <button
               id="copy-result-button"
               title="Copy encoded results to clipboard"
               class="copy-button">Copy</button>
-
             <textarea
+              style="margin-top: .5rem;"
               name="result"
               id="result"
               spellcheck="false"
             ></textarea>
-
             <div class="tip">You may place encoded SVG here to decode it back</div>
           </div>
         </div>
 
         <div class="containers">
           <div class="container container--left container container--result-css">
-            <h4>Base64:</h4>
-
+            <h4 style="margin-bottom: .4em;">Base64:</h4>
             <button
               id="copy-css-result-button" title="Copy CSS results to clipboard" class="copy-button">Copy</button>
-
             <textarea
               name="result-css"
               id="result-css"
@@ -97,7 +82,6 @@
 
           <div class="container container--right container container--demo">
             <h4>Preview:</h4>
-
             <div class="contrast-buttons">Background:
               <button
                 type="button"
@@ -125,18 +109,11 @@
             </div>
 
             <div class="demo-wrapper">
-              <!-- <div id="demo" class="demo"></div> -->
               <img id="demo" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="demo"></img>
             </div>
           </div>
         </div>
       </main>
-
-      <footer class="footer">
-        <a href="https://github.com/yoksel/url-encoder/">Project on GitHub</a>
-        <a href="https://twitter.com/yoksel_en">@yoksel_en</a>
-      </footer>
-
     </div>
     <script src="./assets/js/script.js"></script>
 
